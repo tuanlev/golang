@@ -26,4 +26,47 @@ int      same size as uint
 uintptr  an unsigned integer large enough to store the uninterpreted bits of a pointer value
 
 uint là số nguyên dương
-không có double, float chỉ có float32|float64
+không có double, float chỉ có float32|float64 
+
+# string
+var String string;
+dấu "" tương đương ``
+thư viện strings 
+
+
+docs :
+ # các thư viện xem hàm viết thế nào https://pkg.go.dev/std
+
+## PHÉP GÁN 
+
+# 2 cú pháp 
+
+* var i string   Explicit Declaration: khai báo tường minh
+g := value       short Declaration: khai báo ngắn ngọn
+
+giá trị mặc định sẽ được theo kiểu nếu theo khai báo thứ nhất
+còn khai báo thứ 2 thì sẽ được tự ép kiểu
+
+
+## if 
+# cú pháp 
+if initialization; condition {
+    // khối lệnh nếu điều kiện đúng
+}
+if trong go cho phép sử dụng khai báo ngắn gọn và biến được khai báo chỉ tồn tại phạm vi trong if
+
+## switch 
+switch [init]; [expression] {
+case value1, value2, ...:
+    // khối lệnh khi biểu thức khớp với value1 hoặc value2
+    [fallthrough] // nếu muốn tiếp tục thực thi case tiếp theo
+
+case valueN:
+    // khối lệnh khác
+
+default:
+    // khối lệnh mặc định nếu không khớp case nào
+}
+
+chỉ tồn tại khởi tạo hoặc biểu thức hoặc thiếu cả 2 và value thay bằng condition nếu thiếu cả 2 hoặc trường hợp khởi tạo
+trong go break được mặc định cho tất cả dòng trừ trường hợp khai báo fallthrough nên khi sử dụng fallthrough nó chỉ thực thi thêm 1 case dưới nũa và trở lại chức năng ban đầu 
